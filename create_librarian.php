@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $salary = $_POST['salary'];
 
     $sqlQuery = "INSERT INTO `librarian` (`Fname`, `Lname`, `EmployeeSSN`, `Bdate`, `Address`, `Salary`) 
-        VALUES ('$fname', '$lname', '$employeeSsn', '$birthday', '$address', $salary')";
+    VALUES ('$fname', '$lname', '$employeeSsn', '$birthday', '$address', '$salary')";
 
     $result = mysqli_query($con, $sqlQuery);
 
