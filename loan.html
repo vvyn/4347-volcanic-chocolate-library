@@ -14,12 +14,12 @@
         <br>
 
         <h1>Create Loan</h1>
-        <form action="create_loan.php" method="post">
+        <form action="create_loan.php" method="post" onsubmit="return validateDates('checkoutDateCreate', 'dueDateCreate')">
             Book ID: <input type="number" name="bookId" required> <br> <br>
             User DL ID: <input type="number" name="userDlId" required> <br> <br>
             Employee SSN: <input type="number" name="employeeSsn" required> <br> <br>
-            Checkout Date: <input type="date" name="checkoutDate" required> <br> <br>
-            Due Date: <input type="date" name="dueDate" required> <br> <br>
+            Checkout Date: <input type="date" id="checkoutDateCreate" name="checkoutDate" required> <br> <br>
+            Due Date: <input type="date" id="dueDateCreate" name="dueDate" required> <br> <br>
             <input type="submit" value="Submit">
         </form> 
 
@@ -36,12 +36,12 @@
         <br>
 
         <h1>Update Loan</h1>
-        <form action="update_loan.php" method="post">
+        <form action="update_loan.php" method="post" onsubmit="return validateDates('checkoutDateUpdate', 'dueDateUpdate')">
             Book ID: <input type="number" name="bookId" required> <br> <br>
             User DL ID: <input type="number" name="userDlId" required> <br> <br>
             Employee SSN: <input type="number" name="employeeSsn" required> <br> <br>
-            Checkout Date: <input type="date" name="checkoutDate" required> <br> <br>
-            Due Date: <input type="date" name="dueDate" required> <br> <br>
+            Checkout Date: <input type="date" id="checkoutDateUpdate" name="checkoutDate" required> <br> <br>
+            Due Date: <input type="date" id="dueDateUpdate" name="dueDate" required> <br> <br>
             <input type="submit" value="Submit">
         </form>
 
@@ -54,5 +54,19 @@
         </form>
 
         <script src="" async defer></script>
+
+        <script>
+        function validateDates(checkoutId, dueId) {
+            var dueDate = document.getElementById(dueId).value;
+            var checkoutDate = document.getElementById(checkoutId).value;
+
+            if (new Date(dueDate) >= new Date(checkoutDate)) {
+                return true;
+            } else {
+                alert("The due date must be on or after the checkout date.");
+                return false;
+            }
+        }
+        </script>
     </body>
 </html>
