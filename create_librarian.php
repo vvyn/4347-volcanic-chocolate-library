@@ -10,20 +10,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     // fname, lname, employeeSsn, birthday, address, salary, 
 
-    $fname = $_POST['Fname'];
-    $lname = $_POST['Lname'];
-    $employeeSsn = $_POST['EmployeeSSN'];
-    $birthday = $_POST['Birthday'];
-    $address = $_POST['Address'];
-    $salary = $_POST['Salary'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $employeeSsn = $_POST['employeeSsn'];
+    $birthday = $_POST['birthday'];
+    $address = $_POST['address'];
+    $salary = $_POST['salary'];
 
-    $sqlQuery = "SELECT * FROM `librarian` WHERE 
-        `Fname` = '$fname' AND 
-        `Lname` = '$lname' AND 
-        `EmployeeSsn` = '$employeeSSN' AND 
-        `Birthday` = '$birthday' AND 
-        `Address` = '$address' AND 
-        `Salary` = '$salary'";
+    $sqlQuery = "INSERT INTO `librarian` (`Fname`, `Lname`, `EmployeeSSN`, `Bdate`, `Address`, `Salary`) 
+        VALUES ('$fname', '$lname', '$employeeSsn', '$birthday', '$address', $salary')";
 
     $result = mysqli_query($con, $sqlQuery);
 
