@@ -9,21 +9,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $fname = $_POST['Fname'];
-    $lname = $_POST['Lname'];
-    $employeeSsn = $_POST['EmployeeSSN'];
-    $birthday = $_POST['Birthday'];
-    $address = $_POST['Address'];
-    $salary = $_POST['Salary'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $employeeSsn = $_POST['employeeSsn'];
+    $birthday = $_POST['birthday'];
+    $address = $_POST['address'];
+    $salary = $_POST['salary'];
     
     $sqlQuery = "UPDATE `librarian` SET 
-    `Fname` = '$Fname', 
-    `Lname` = '$Lname', 
-    `EmployeeSSN` = '$EmployeeSSN', 
-    `Birthday` = '$Birthday', 
-    `Address` = '$Address', 
-    `Salary` = '$Salary' 
-    WHERE `Librarian` = '$'EmployeeSSN";
+    `Fname` = '$fname', 
+    `Lname` = '$lname', 
+    `Birthday` = '$birthday', 
+    `Address` = '$address', 
+    `Salary` = '$salary' 
+    WHERE `EmployeeSSN` = '$employeeSsn'";
     $result = mysqli_query($con, $sqlQuery);
     
     if ($result) {
