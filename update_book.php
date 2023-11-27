@@ -9,11 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $authorFname = $_POST['AuthorFname'];
-    $authorLname = $_POST['AuthorLname'];
-    $title = $_POST['BookTitle'];
-    $genre = $_POST['Genre'];
-    $bookId = $_POST['BookID'];
+    $authorFname = $_POST['authorFname'];
+    $authorLname = $_POST['authorLname'];
+    $title = $_POST['title'];
+    $genre = $_POST['genre'];
+    $bookId = $_POST['bookId'];
     
     $sqlQuery = "UPDATE `books` SET 
     `AuthorFname` = '$authorFname', 
