@@ -22,13 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $result = mysqli_query($con, $sqlQuery);
 
-    if (mysqli_num_rows($result) > 0) {
-        while($row = mysqli_fetch_assoc($result)) {
-            $message .= "First Name: " . $row["Fname"] . " - Last Name: " . $row["Lname"] . "Employee SSN: " . $row["EmployeeSSN"] . " - Birthday: " . $row["Birthday"] . " - Address: " . $row["Address"] . " - Salary: " . $row["Salary"] . "<br>";
-        }
+     if ($result) {
+        $message = "Librarian has been created successfully.";
     } else {
-        $message = "No records found";
+        $message = "Error creating book: " . mysqli_error($con);
     }
+    
 
     mysqli_close($con);
 }
