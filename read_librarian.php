@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $employeeSsn = $_POST['EmployeeSSN'];
+    $employeeSsn = $_POST['employeeSsn'];
 
     $sqlQuery = "SELECT * FROM `librarian` WHERE `EmployeeSSN` = '$employeeSsn'";
     $result = mysqli_query($con, $sqlQuery);
