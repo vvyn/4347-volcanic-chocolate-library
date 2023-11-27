@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sqlQuery = "UPDATE `librarian` SET 
     `Fname` = '$fname', 
     `Lname` = '$lname', 
-    `Birthday` = '$birthday', 
+    `Bdate` = '$birthday', 
     `Address` = '$address', 
     `Salary` = '$salary' 
     WHERE `EmployeeSSN` = '$employeeSsn'";
