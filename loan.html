@@ -56,17 +56,21 @@
         <script src="" async defer></script>
 
         <script>
-        function validateDates(checkoutId, dueId) {
-            var dueDate = document.getElementById(dueId).value;
-            var checkoutDate = document.getElementById(checkoutId).value;
+            function validateDates(checkoutId, dueId) {
+                var checkoutDate = new Date(document.getElementById(checkoutId).value);
+                var dueDate = new Date(document.getElementById(dueId).value);
 
-            if (new Date(dueDate) >= new Date(checkoutDate)) {
-                return true;
-            } else {
-                alert("The due date must be on or after the checkout date.");
-                return false;
+                console.log("Checkout Date:", checkoutDate);
+                console.log("Due Date:", dueDate);
+
+                if (dueDate < checkoutDate) {
+                    alert("The due date must be on or after the checkout date.");
+                    return false;
+                } else {
+                    return true;
+                }
             }
-        }
         </script>
+
     </body>
 </html>
