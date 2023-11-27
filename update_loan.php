@@ -9,16 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $bookId = $_POST['BookID'];
-    $userDLId = $_POST['UserDLId'];
-    $employeeSsn = $_POST['EmployeeSSN'];
-    $checkoutDate = $_POST['CheckOutDate'];
-    $dueDate = $_POST['DueDate'];
+    $bookId = $_POST['bookId'];
+    $userDLId = $_POST['userDlId'];
+    $employeeSsn = $_POST['employeeSsn'];
+    $checkoutDate = $_POST['checkoutDateUpdate'];
+    $dueDate = $_POST['dueDateUpdate'];
     
-    $sqlQuery = "UPDATE `loans` SET 
-    `BookID` = '$bookId', 
-    `UserDLId` = '$userDLId', 
-    `EmployeeSSN` = '$employeeSsn', 
+    $sqlQuery = "UPDATE `loans` SET  
     `CheckOutDate` = '$checkoutDate', 
     `DueDate` = '$dueDate' 
     WHERE `BookID` = '$bookId' AND `UserDLId` = '$userDLId' AND `EmployeeSSN` = '$employeeSsn' ";
