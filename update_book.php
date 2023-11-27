@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     `AuthorFname` = '$authorFname', 
     `AuthorLname` = '$authorLname', 
     `BookTitle` = '$title', 
-    `Genre` = '$genre', 
+    `Genre` = '$genre' 
     WHERE `BookID` = '$bookId'";
     $result = mysqli_query($con, $sqlQuery);
     
