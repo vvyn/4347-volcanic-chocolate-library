@@ -9,11 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $bookId = $_POST['BookID'];
-    $userDLId = $_POST['UserDLId'];
-    $employeeSsn = $_POST['EmployeeSSN'];
-    $checkoutDate = $_POST['CheckOutDate'];
-    $dueDate = $_POST['DueDate'];
+    $bookId = $_POST['bookId'];
+    $userDLId = $_POST['userDlId'];
+    $employeeSsn = $_POST['employeeSsn'];
+    $checkoutDate = $_POST['checkoutDate'];
+    $dueDate = $_POST['dueDate'];
     
     $sqlQuery = "INSERT INTO `loans` (`BookID`, `UserDLId`, `EmployeeSSN`, `CheckOutDate`, `DueDate`)
     VALUES ('$bookId', '$userDLId', '$employeeSsn', '$checkoutDate', '$dueDate')";
