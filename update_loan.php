@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $bookId = $_POST['bookId'];
     $userDLId = $_POST['userDlId'];
     $employeeSsn = $_POST['employeeSsn'];
-    $checkoutDate = $_POST['checkoutDateUpdate'];
-    $dueDate = $_POST['dueDateUpdate'];
+    $checkoutDate = $_POST['checkoutDate'];
+    $dueDate = $_POST['dueDate'];
     
     $sqlQuery = "UPDATE `loans` SET  
     `CheckOutDate` = '$checkoutDate', 
