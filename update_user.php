@@ -43,4 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error updating record: " . $e->getMessage();
     }
 }
+
+if (true) {
+    echo "<a href='user.html'><button>Back</button></a>";
+} 
 ?>
