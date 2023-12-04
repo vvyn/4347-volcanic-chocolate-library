@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $bookId = $_POST['BookID'];
+    $bookId = $_POST['bookId'];
     
     $sqlQuery = "DELETE FROM `books` WHERE `BookID` = '$bookId'";
     $result = mysqli_query($con, $sqlQuery);
@@ -22,6 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     mysqli_close($con);
 }
+
+if (true) {
+    echo "<a href='book.html'><button>Back</button></a>";
+} 
 
 if (!empty($sqlQuery)) {
     echo "<p><strong>SQL Query:</strong> " . htmlspecialchars($sqlQuery) . "</p>";

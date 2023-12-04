@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if (true) {
     echo "<a href='book.html'><button>Back</button></a>";
 } 
-    
+
 if (!empty($sqlQuery)) {
     echo "<p><strong>SQL Query:</strong> " . htmlspecialchars($sqlQuery) . "</p>";
 }
