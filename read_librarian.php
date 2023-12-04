@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 if (true) {
-    echo "<a href='index.html'><button>Back</button></a>";
+    echo "<a href='librarian.html'><button>Back</button></a>";
 } 
 
 if (!empty($sqlQuery)) {
