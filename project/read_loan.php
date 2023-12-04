@@ -27,6 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($con);
 }
 
+if (true) {
+    echo "<a href='index.html'><button>Back</button></a>";
+} 
+
 if (!empty($sqlQuery)) {
     echo "<p><strong>SQL Query:</strong> " . htmlspecialchars($sqlQuery) . "</p>";
 }
